@@ -226,20 +226,20 @@ router.post('/registerdetails',function(req, res){
 //       };
 //       return res.json(response);
 
-// router.get('/all',  (req, res, next) => {
-//   User.getUsers()
-//     .then(users => {
-//       let response = {
-//         success: true,
-//         users: users
-//       };
-//       return res.json(response);
-//     })
-//     .catch(err => {
-//       log.err('mongo', 'failed to get users', err.message || err);
-//       return next(new Error('Failed to get users'));
-//     });
-// });
+router.get('/allUsers',  (req, res, next) => {
+  User.getUsers()
+    .then(users => {
+      let response = {
+        success: true,
+        users: users
+      };
+      return res.json(response);
+    })
+    .catch(err => {
+      log.err('mongo', 'failed to get users', err.message || err);
+      return next(new Error('Failed to get users'));
+    });
+});
 
 
 //Get Matching Users

@@ -10,6 +10,7 @@ const config = require('./config');
 // import routes
 const userRoutes = require('./routes/user');
 const messageRoutes = require('./routes/message');
+const notificationRoute = require('./routes/notification');//notification
 
 
 // initialize the app
@@ -30,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // TODO: change to '/user' and '/message'
 app.use(`${config.root}/users`, userRoutes);
 app.use(`${config.root}/messages`, messageRoutes);
-
+app.use(`${config.root}/notifications`, notificationRoute);//notification
 // set error handling middleware
 app.use(errorMiddleware);
 
